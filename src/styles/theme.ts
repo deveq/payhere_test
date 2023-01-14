@@ -1,0 +1,43 @@
+import { DefaultTheme } from "styled-components";
+
+export const lightTheme: DefaultTheme = {
+    bg_page1: '#F8F9FA',
+    bg_page2: '#FFFFFF',
+    bg_element1: '#E9ECEF',
+    bg_element2: '#F8F9FA',
+    bg_element3: '#FFFFFF',
+    bg_element4: '#DEE2E6',
+    text1: '#212529',
+    text2: '#495057',
+    text3: '#868E96',
+    text4: '#CED4DA',
+    border1: '#343A40',
+    border2: '#ADB5BD',
+    border3: '#DEE2E6',
+    border4: '#F1F3F5',
+    primary: '#216fdb',
+    destructive: '#ce3426',
+    success: '#157f40',
+    boxShadow: '0 5px 10px rgba(100, 100, 100, 0.15), 0 2px 4px rgba(100, 100, 100, 0.15)',
+};
+
+export const darkTheme: DefaultTheme = {
+    bg_page1: '#121212',
+    bg_page2: '#121212',
+    bg_element1: '#1E1E1E',
+    bg_element2: '#1E1E1E',
+    bg_element3: '#252525',
+    bg_element4: '#2E2E2E',
+    text1: '#ECECEC',
+    text2: '#D9D9D9',
+    text3: '#ACACAC',
+    text4: '#595959',
+    border1: '#E0E0E0',
+    border2: '#A0A0A0',
+    border3: '#4D4D4D',
+    border4: '#2A2A2A',
+    primary: '#216fdb',
+    destructive: '#ce3426',
+    success: '#157f40',
+    boxShadow: '0px 5px 10px rgba(40, 40, 40, 1), 0px 2px 4px rgba(40, 40, 40, 1)',
+};
