@@ -6,6 +6,7 @@ export interface ButtonProps {
     backgroundColor?: string;
     borderColor?: string;
     color?: string;
+    showShadow?: boolean;
 }
 
 const handleSize = (size?: ButtonSize) => {
@@ -16,19 +17,34 @@ const handleSize = (size?: ButtonSize) => {
 }
 
 export const Button = styled.button<ButtonProps>`
-    background-color: ${(props) => 
-        props.backgroundColor || props.theme.bg_element2
+    background-color: ${({backgroundColor, theme}) => 
+        backgroundColor || theme.bg_element2
     };
-    border: none;
     border-radius: 5px;
-    color: ${(props) => 
-        props.color || props.theme.text1
+    color: ${({color, theme}) => 
+        color || theme.text1
     };
-    padding: ${(props) => handleSize(props.size)};
+    padding: ${({size}) => handleSize(size)};
     font-weight: bold;
-    box-shadow: ${(props) => props.theme.boxShadow};
+    box-shadow: ${({theme, showShadow}) => showShadow ? theme.boxShadow : 'none'};
+    border: ${({showShadow, theme}) => showShadow ? 'none' : `1px solid ${theme.border2}` };
+    &:hover,
+    &:active {
+        background-color: ${({theme}) => theme.bg_element3};
+    }
+    cursor: pointer;
 `;
 
 Button.defaultProps = {
     size: 'md',
 }
+
+export const Primary = styled(Button)`
+    background-color: ${({theme}) => theme.primary};
+    color: white;
+`;
+
+export const Destructive = styled(Button)`
+    background-color: ${({theme}) => theme.destructive};
+    color: white;
+`;

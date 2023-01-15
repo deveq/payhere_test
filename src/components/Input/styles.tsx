@@ -10,7 +10,8 @@ const Container = styled.div`
     overflow: hidden;
     margin-left: 20px;
     padding: 10px;
-    box-shadow: ${(props) => props.theme.boxShadow};
+    border: 1px solid ${({theme}) => theme.border3};
+    background: ${({theme}) => theme.bg_element1};
 `;
 
 const Input = styled.input`
@@ -18,12 +19,14 @@ const Input = styled.input`
     outline: none;
     flex: 1;
     font-size: 16px;
-    background: transparent;
+    color: ${({theme}) => theme.text1};
+    background: ${({theme}) => theme.bg_element1};
 `;
 
 const Icon = styled(FiSearch)`
     width: 20px;
     height: 20px;
+    color: ${({theme}) => theme.text1};
     cursor: pointer;
     &:hover,
     &:active {
