@@ -10,6 +10,7 @@ export interface IMenuItemData {
 export interface MenuTabProps {
     title: string;
     data: IMenuItemData[];
+    selected?: boolean;
 }
 
 export const MenuList = styled.ul`
@@ -33,11 +34,20 @@ export const SettingsContainer = styled.div`
     flex: 1;
 `;
 
-export const CardTitle = styled.h3`
+interface CardTitleProps {
+    selected?: boolean;
+}
+
+export const CardTitle = styled.h3<CardTitleProps>`
     color: ${({theme}) => theme.text3};
     font-size: 18px;
     margin-bottom: 10px;
+    transition: all 0.5s ease;
+    padding: 5px;
+    border-radius: 5px;
     text-indent: -10px;
+    ${({selected}) => selected && 'text-indent: 10px'};
+    
 `;
 
 export const MenuCard = styled(Card)`
@@ -46,10 +56,11 @@ export const MenuCard = styled(Card)`
 
 
 
-export const MenuTab = ({data, title}: MenuTabProps) => {
+export const MenuTab = ({data, title, selected}: MenuTabProps) => {
+  
     return (
         <>
-            <CardTitle>{title}</CardTitle>
+            <CardTitle selected={selected}>{title}</CardTitle>
             <MenuCard>
                 <MenuList>
                     {

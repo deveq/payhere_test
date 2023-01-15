@@ -1,18 +1,21 @@
 import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as Styled from './styles';
 
-export interface AsideListProps {
+interface AsideListProps {
 	data: IAsideListItem[];
+	selectedIndex: number;
+	
 }
-
 export interface IAsideListItem {
 	title: string;
 	onClick: (index: number) => void;
 	selected?: boolean;
 }
 
-const AsideList = ({ data }: AsideListProps) => {
-	const [selectedIndex, setSelectedIndex] = useState(0);
+
+
+const AsideList = ({data, selectedIndex}: AsideListProps) => {
 	return (
 		<>
 			<Styled.List>
@@ -21,7 +24,7 @@ const AsideList = ({ data }: AsideListProps) => {
                         key={item.title}
 						onClick={() => {
 							item.onClick(index);
-							setSelectedIndex(index);
+							// setSelectedIndex(index);
 						}}
 						selected={selectedIndex === index}
 					>

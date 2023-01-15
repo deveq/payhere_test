@@ -47,4 +47,9 @@ export const Primary = styled(Button)`
 export const Destructive = styled(Button)`
     background-color: ${({theme}) => theme.destructive};
     color: white;
+    border: none;
+    &:hover,
+    &:active {
+        background-color: ${({theme}) => theme.destructive};
+    }
 `;

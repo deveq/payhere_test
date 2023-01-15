@@ -44,7 +44,7 @@ export const darkTheme: DefaultTheme = {
     border3: '#4D4D4D',
     border4: '#2A2A2A',
     primary: '#216fdb',
-    destructive: '#ce3426',
+    destructive: '#ce3426bb',
     success: '#157f40',
     boxShadow: '0px 5px 10px rgba(40, 40, 40, 1), 0px 2px 4px rgba(40, 40, 40, 1)',
     path1: '#ffffff',
