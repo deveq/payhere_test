@@ -1,12 +1,12 @@
 import * as Styled from './styles';
 
-export interface List {
+export interface ILinkList {
 	to: string;
 	title: string;
 }
 
 interface NavMenuProps {
-	list: List[];
+	list: ILinkList[];
 }
 
 const NavMenu = ({ list }: NavMenuProps) => {

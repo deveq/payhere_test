@@ -1,20 +1,35 @@
-import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent } from 'assets/logo.svg';
 import {flexCenter} from 'styles/helper';
 
-
 export const Container = styled.header`
 	display: flex;
 	padding: 1rem 2rem;
-	background: ${(props) => props.theme.bg_page1};
-	box-shadow: ${(props) => props.theme.boxShadow};
+	background: ${({theme}) => theme.bg_page1};
+	box-shadow: ${({theme}) => theme.boxShadow};
+	position: relative;
+	z-index: 10;
 `;
 
 export const Logo = styled(ReactComponent)`
+	${flexCenter};
 	width: 50px;
 	height: 50px;
-	${flexCenter};
+	path {
+		opacity: ${({theme}) => theme.opacity1};
+	}
+
+	path:nth-child(1) {
+		fill: ${({theme}) => theme.path1};
+	}
+	path:nth-child(2) {
+		opacity: ${({theme}) => theme.opacity2};
+		fill: ${({theme}) => theme.path2};
+	}
+	path:nth-child(3) {
+		fill: ${({theme}) => theme.path3};
+	}
+	
 `;
 
 export const Headline = styled.h1`

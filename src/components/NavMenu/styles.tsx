@@ -15,7 +15,7 @@ export const ListItem = styled.li`
     justify-content: center;
 `
 export const Link = styled(NavLink)`
-    color: ${(props) => props.theme.text1};
+    color: ${({theme}) => theme.text1};
     text-decoration: none;
     font-size: 20px;
     text-transform: capitalize;

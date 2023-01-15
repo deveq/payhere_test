@@ -2,11 +2,11 @@ import * as Styled from './styles';
 import BlindText from '../BlindText';
 import Input from 'components/Input';
 import { Link } from 'react-router-dom';
-import NavMenu, {List} from '../NavMenu'
+import NavMenu, {ILinkList} from '../NavMenu'
 import Button from '../Button';
 
-const navMenuList: List[] = [
-    {title: 'issue', to: '/issue'},
+const navMenuList: ILinkList[] = [
+    {title: 'issue', to: '/'},
     {title: 'repositories', to: '/repositories'},
     {title: 'settings', to: '/settings'},
 ]
