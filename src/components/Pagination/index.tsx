@@ -35,7 +35,11 @@ const Pagination = ({ page, setPage, limit, total }: PaginationProps) => {
 
 	return (
 		<Styled.Container>
-			<Styled.PageButton onClick={moveToPrev} disabled={page === 1}>
+			<Styled.PageButton
+				onClick={moveToPrev}
+				disabled={page === 1}
+				hide={page === 1}
+			>
 				&lt;
 			</Styled.PageButton>
 			{startPage > 10 && (
@@ -77,7 +81,11 @@ const Pagination = ({ page, setPage, limit, total }: PaginationProps) => {
 					</>
 				)}
 			</>
-			<Styled.PageButton onClick={moveToNext} disabled={page === numPages}>
+			<Styled.PageButton
+				hide={numPages === page}
+				onClick={moveToNext}
+				disabled={page === numPages}
+			>
 				&gt;
 			</Styled.PageButton>
 		</Styled.Container>
