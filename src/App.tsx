@@ -5,7 +5,7 @@ import GlobalStyle from 'styles/GlobalStyle';
 import { lightTheme, darkTheme } from 'styles/theme';
 import { themeModeState } from 'atoms/themeMode';
 import Layout from 'pages/Layout';
-import Repos from 'pages/Repos';
+import Repositories from 'pages/Repositories';
 import Settings from 'pages/Settings';
 import Issues from 'pages/Issues';
 import SearchResult from 'pages/SearchResult';
@@ -18,7 +18,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<Issues />} />
-					<Route path="/repositories" element={<Repos />} />
+					<Route path="/repositories" element={<Repositories />} />
 					<Route path="/settings" element={<Settings />} />
 					<Route path="/searchResult" element={<SearchResult />} />
 				</Route>
