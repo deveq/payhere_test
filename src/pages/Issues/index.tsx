@@ -7,13 +7,13 @@ import {IssueProps} from 'components/IssueList/Issue';
 import Pagination from 'components/Pagination';
 
 const asideMenuList = [
+    '베스트 매치',
     '최근순',
     '오래된순',
     '댓글 많은순',
     '댓글 적은순',
     '최근 수정된 순',
     '오래된 수정 순',
-    '베스트 매치',
 ]
 const Issues = () => {
     const [page, setPage] = useState(1);
@@ -33,41 +33,41 @@ const Issues = () => {
             info: '#26001 by yap241986 was closed 14 hours ago',
             status: 'open',
         },
-        {
-            title: 'DevTools1 Bug Element &quot;3&quot; not found',
-            info: '#26001 by yap241986 was closed 14 hours ago',
-            status: 'open',
-        },
-        {
-            title: 'DevTools1 Bug Element &quot;3&quot; not found',
-            info: '#26001 by yap241986 was closed 14 hours ago',
-            status: 'open',
-        },
-        {
-            title: 'DevTools 2Bug Element &quot;3&quot; not found',
-            info: '#26001 by yap241986 was closed 14 hours ago',
-            status: 'open',
-        },
-        {
-            title: 'DevTools 3Bug Element &quot;3&quot; not found',
-            info: '#26001 by yap241986 was closed 14 hours ago',
-            status: 'open',
-        },
-        {
-            title: 'DevTools Bu4g Element &quot;3&quot; not found',
-            info: '#26001 by yap241986 was closed 14 hours ago',
-            status: 'open',
-        },
-        {
-            title: 'DevTools B1ug Element &quot;3&quot; not found',
-            info: '#26001 by yap241986 was closed 14 hours ago',
-            status: 'open',
-        },
-        {
-            title: 'DevT11ools B1ug Element &quot;3&quot; not found',
-            info: '#26001 by yap241986 was closed 14 hours ago',
-            status: 'open',
-        },
+        // {
+        //     title: 'DevTools1 Bug Ele22ment &quot;3&quot; not found',
+        //     info: '#26001 by yap241986 was closed 14 hours ago',
+        //     status: 'open',
+        // },
+        // {
+        //     title: 'DevTools1 Bug Element &quot;3&quot; not found',
+        //     info: '#26001 by yap241986 was closed 14 hours ago',
+        //     status: 'open',
+        // },
+        // {
+        //     title: 'DevTools 2Bug Element &quot;3&quot; not found',
+        //     info: '#26001 by yap241986 was closed 14 hours ago',
+        //     status: 'open',
+        // },
+        // {
+        //     title: 'DevTools 3Bug Element &quot;3&quot; not found',
+        //     info: '#26001 by yap241986 was closed 14 hours ago',
+        //     status: 'open',
+        // },
+        // {
+        //     title: 'DevTools Bu4g Element &quot;3&quot; not found',
+        //     info: '#26001 by yap241986 was closed 14 hours ago',
+        //     status: 'open',
+        // },
+        // {
+        //     title: 'DevTools B1ug Element &quot;3&quot; not found',
+        //     info: '#26001 by yap241986 was closed 14 hours ago',
+        //     status: 'open',
+        // },
+        // {
+        //     title: 'DevT11ools B1ug Element &quot;3&quot; not found',
+        //     info: '#26001 by yap241986 was closed 14 hours ago',
+        //     status: 'open',
+        // },
     ]
     return (
         <>

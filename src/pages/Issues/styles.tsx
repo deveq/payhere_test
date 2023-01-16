@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const IssuesContainer = styled.div`
     flex: 1;
-    padding: 70px 30px 40px 30px;
+    padding: 70px 30px 20px 30px;
     display: flex;
     flex-direction: column;
 `;
@@ -24,6 +24,7 @@ export const FilterContainer = styled.div`
 `;
 
 export const PaginationWrapper = styled.div`
-    padding-top: 50px;
     flex: 1;
+    display: flex;
+    align-items: flex-end;
 `;

@@ -1,4 +1,5 @@
 import * as Styled from './styles';
+import {NavLink} from 'react-router-dom';
 
 export interface ILinkList {
 	to: string;
