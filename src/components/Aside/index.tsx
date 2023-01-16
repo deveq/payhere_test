@@ -2,15 +2,15 @@ import * as Styled from './styles';
 import AsideList, {IAsideListItem} from './AsideList';
 
 interface AsideProps {
-    selectedIndex: number;
-    data: IAsideListItem[];
+    data: string[];
+    title: string;
 }
 
-const Aside = ({selectedIndex, data}: AsideProps) => {
+const Aside = ({data, title}: AsideProps) => {
     return (
         <Styled.Aside>
-            <Styled.Title>설정</Styled.Title>
-            <AsideList selectedIndex={selectedIndex} data={data} />
+            <Styled.Title>{title}</Styled.Title>
+            <AsideList data={data} />
         </Styled.Aside>
     )
 }

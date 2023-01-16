@@ -1,34 +1,32 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import * as Styled from './styles';
+import {useRecoilState} from 'recoil';
+import {asideSelectedIndex} from 'atoms/asideSelectedIndex';
 
 interface AsideListProps {
-	data: IAsideListItem[];
-	selectedIndex: number;
-	
+	data: string[];
 }
 export interface IAsideListItem {
 	title: string;
-	onClick: (index: number) => void;
-	selected?: boolean;
 }
 
 
 
-const AsideList = ({data, selectedIndex}: AsideListProps) => {
+const AsideList = ({data}: AsideListProps) => {
+	const [selectedIndex, setSelectedIndex] = useRecoilState(asideSelectedIndex);
 	return (
 		<>
 			<Styled.List>
 				{data.map((item, index) => (
 					<Styled.ListItem
-                        key={item.title}
+                        key={item}
 						onClick={() => {
-							item.onClick(index);
-							// setSelectedIndex(index);
+							setSelectedIndex(index);
 						}}
 						selected={selectedIndex === index}
 					>
-						{item.title}
+						{item}
 					</Styled.ListItem>
 				))}
 			</Styled.List>
