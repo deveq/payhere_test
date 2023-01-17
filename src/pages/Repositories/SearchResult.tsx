@@ -2,9 +2,11 @@ import { Suspense, Dispatch, SetStateAction, useRef, useEffect } from 'react';
 import * as Styled from 'pages/Layout/styles';
 import Item from 'components/Item';
 import Pagination from 'components/Pagination';
-import useGetRepositories from 'hooks/useGetRepositories';
+import {useGetRepositories} from 'hooks';
 import { repositoriesAsideListData } from 'assets/asideListData';
 import { RepositorySortType } from 'api';
+import {useSetRecoilState} from 'recoil';
+import {repositoriesState} from 'atoms/repositoriesState';
 
 interface SearchResultProps {
 	page: number;
@@ -21,11 +23,31 @@ const SearchResult = ({ page, setPage, query, index }: SearchResultProps) => {
 		per_page: 10,
 	});
 	const listRef = useRef<HTMLUListElement>(null);
+	const setRepositories = useSetRecoilState(repositoriesState);
 	useEffect(() => {
 		if (listRef.current) {
 			listRef.current.scrollTop = 0;
 		}
 	}, [page]);
+
+	const appendRepository = (repoName: string) => {
+		setRepositories(prev => {
+
+			if (prev.includes(repoName)) {
+				alert('동일한 저장소는 추가할 수 없습니다.');
+				return prev;
+			}
+
+			if (prev.length === 4) {
+				alert('4개 초과');
+				return prev;
+			} 
+			
+			const newArray = [...prev];
+			newArray.push(repoName);
+			return newArray;
+		})
+	}
 
 	if (status === 'success' && !data) {
 		/**
@@ -46,7 +68,7 @@ const SearchResult = ({ page, setPage, query, index }: SearchResultProps) => {
 							title={item.full_name}
 							description={item.description}
 							meta={item.created_at}
-							onClick={() => alert(`${item.full_name} 추가`)}
+							onClick={() => appendRepository(item.full_name)}
 						/>
 					))}
 					<Pagination

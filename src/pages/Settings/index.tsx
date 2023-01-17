@@ -5,8 +5,8 @@ import Button, { Destructive, Primary } from 'components/Button';
 import * as Styled from './styles';
 import Aside from 'components/Aside';
 // import {themeModeState} from '../atoms/themeMode';
-import { themeModeState } from 'atoms/themeMode';
-import { recordModeState } from 'atoms/recordMode';
+import { themeModeState } from 'atoms/themeModeState';
+import { recordModeState } from 'atoms/recordModeState';
 
 const Settings = () => {
 	// TODO: 다크모드, 검색기록, 계정, 초기화 함수 만들기

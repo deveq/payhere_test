@@ -1,15 +1,22 @@
 import { SetStateAction, Dispatch } from 'react';
 import * as Styled from './styles';
-import useDebounce from 'hooks/useDebounce';
+import { useDebounce } from 'hooks';
 
 export interface PaginationProps {
 	total: number;
 	page: number;
 	setPage: Dispatch<SetStateAction<number>>;
 	limit: number;
+	onlyArrow?: boolean;
 }
 
-const Pagination = ({ page, setPage, limit, total }: PaginationProps) => {
+const Pagination = ({
+	page,
+	setPage,
+	limit,
+	total,
+	onlyArrow,
+}: PaginationProps) => {
 	const numPages = Math.ceil(total / limit);
 	const startPage = Math.floor((page - 1) / 10) * 10 + 1;
 	const endPage = Math.min(startPage + 9, numPages);
@@ -25,7 +32,7 @@ const Pagination = ({ page, setPage, limit, total }: PaginationProps) => {
 	const moveToPrev = useDebounce(() => {
 		setPage((prev) => prev - 1);
 	}, 500);
-	
+
 	const moveToNext = useDebounce(() => {
 		setPage((prev) => prev + 1);
 	}, 500);
@@ -41,9 +48,9 @@ const Pagination = ({ page, setPage, limit, total }: PaginationProps) => {
 				disabled={page === 1}
 				hide={page === 1}
 			>
-				&lt;
+				{onlyArrow ? '이전 페이지' : '<'}
 			</Styled.PageButton>
-			{startPage > 10 && (
+			{!onlyArrow && startPage > 10 && (
 				<>
 					<Styled.PageButton
 						onClick={() => {
@@ -56,20 +63,21 @@ const Pagination = ({ page, setPage, limit, total }: PaginationProps) => {
 				</>
 			)}
 			<>
-				{getNumber().map((num) => (
-					<Styled.PageButton
-						onClick={() => {
-							moveToTarget(num);
-						}}
-						selected={num === page}
-						key={`page_${num}`}
-					>
-						{num}
-					</Styled.PageButton>
-				))}
+				{!onlyArrow &&
+					getNumber().map((num) => (
+						<Styled.PageButton
+							onClick={() => {
+								moveToTarget(num);
+							}}
+							selected={num === page}
+							key={`page_${num}`}
+						>
+							{num}
+						</Styled.PageButton>
+					))}
 			</>
-			<>
-				{endPage !== numPages && (
+			{/* <>
+				{!onlyArrow && endPage !== numPages && (
 					<>
 						<Styled.PageButton disabled>...</Styled.PageButton>
 						<Styled.PageButton
@@ -81,13 +89,13 @@ const Pagination = ({ page, setPage, limit, total }: PaginationProps) => {
 						</Styled.PageButton>
 					</>
 				)}
-			</>
+			</> */}
 			<Styled.PageButton
 				hide={numPages === page}
 				onClick={moveToNext}
 				disabled={page === numPages}
 			>
-				&gt;
+				{onlyArrow ? '다음 페이지' : '>'}
 			</Styled.PageButton>
 		</Styled.Container>
 	);

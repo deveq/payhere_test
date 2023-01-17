@@ -1,25 +1,39 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense, useMemo} from 'react';
 import Aside from 'components/Aside';
 import * as Styled from 'pages/Layout/styles';
-import ChipList from 'components/ChipList';
-import Pagination from 'components/Pagination';
-import { issueResult } from 'api/mockData';
-import Item from 'components/Item';
-import { issuesAsideListData } from 'assets/asideListData';
-import useGetIssues from'hooks/useGetIssues';
+import { repositoriesState } from 'atoms/repositoriesState';
+import { useRecoilValue } from 'recoil';
+import SearchResult from './SearchResult';
+
+import {getIssues} from 'api';
+
 
 const Issues = () => {
 	const [page, setPage] = useState(1);
-	const menuList = issuesAsideListData.map((val) => val.title);
+	const repositories = useRecoilValue(repositoriesState);
 	const [selectedIndex, setSelectedIndex] = useState(0);
-	const [selectedRepository, setSelectedRepository] = useState('');
-	const [selectedFilter, setSelectedFilter] = useState('open');
+	const menuList = ['최신순' ,'오래된 순'];
+		// repositories.length === 0 ? [] : ['전체보기', ...repositories];
+	// useEffect(() => {
 
-	
+	// }, [selectedIndex, repositories])
 
-	useEffect(() => {
-		// 정렬 변경된 값으로 다시 요청하기
-	}, [selectedIndex, selectedRepository, selectedFilter]);
+	// if (!data) return;
+	// const filteredArray = data.flat(1).filter(item => !!item);
+	// const sortedArray = filteredArray.sort((a,b) => parseInt(a!.created_at) - parseInt(b!.created_at))
+	// setIssueArray(sortedArray);
+	// useEffect(() => {
+	// 	// 정렬 변경된 값으로 다시 요청하기
+	// }, [selectedIndex]);
+
+	const reqs = useMemo(() => {
+		return repositories.map(repoName => getIssues(repoName, {
+			direction: selectedIndex === 0 ? 'desc' : 'asc',
+			sort: 'created',
+			page,
+			per_page: 10,
+		}))
+	}, [repositories, selectedIndex, page]);
 
 	return (
 		<>
@@ -30,40 +44,23 @@ const Issues = () => {
 				title="정렬"
 			/>
 			<Styled.CommonContainer>
-				<Styled.CardTitle>
-					이슈를 모아볼 저장소를 선택해주세요{selectedRepository}
-				</Styled.CardTitle>
-				<ChipList
-					data={[
-						'react',
-						'react-native',
-						'deveqreact-native',
-						'react-nativereact-native',
-					]}
-					onClick={setSelectedRepository}
-					selectedItem={selectedRepository}
-				/>
-				<Styled.ListWrapper>
-					{issueResult.map((item) => (
-						<Item
-							key={`${item.title}_${item.created_at}`}
-							title={item.title}
-							meta={item.created_at}
-							onClick={() => {
-								window.open(item.html_url, '_blank');
-							}}
-						/>
-					))}
-					<Pagination total={332} limit={10} page={page} setPage={setPage} />
-				</Styled.ListWrapper>
+				<Suspense fallback={<div>abcd</div>}>
+					<SearchResult
+						index={selectedIndex}
+						page={page}
+						setPage={setPage}
+						repositories={repositories}
+						reqs={reqs}
+					/>
+				</Suspense>
 			</Styled.CommonContainer>
 			<Styled.RightContainer>
 				<Styled.CardTitle>필터</Styled.CardTitle>
-				<ChipList
+				{/* <ChipList
 					data={['open', 'closed', 'all']}
 					selectedItem={selectedFilter}
 					onClick={setSelectedFilter}
-				/>
+				/> */}
 			</Styled.RightContainer>
 		</>
 	);

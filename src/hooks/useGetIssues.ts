@@ -1,14 +1,34 @@
-import { useQuery } from 'react-query';
-import { getIssues, SearchIssueConfig } from 'api';
+import {useState, useEffect} from 'react';
+import { useQuery, UseQueryResult } from 'react-query';
+import { getIssues, IssueState, SearchIssueConfig } from 'api';
+import {IssueResult} from 'types/api';
 
-const useGetIssues = (
-	owner: string,
+
+export const useGetIssues = (
 	repository: string,
-	config?: SearchIssueConfig,
+	config: SearchIssueConfig,
 ) => {
-	return useQuery(['issues', owner, repository, config], () =>
-		getIssues(owner, repository, config),
+	return useQuery(['issues', repository, config], () =>
+		getIssues(repository, config),
 	);
 };
 
-export default useGetIssues;
+export const useGetAllIssues = (
+	repository: string[],
+	config: SearchIssueConfig,
+) => {
+	const reqArray = repository.map(repoName => getIssues(repoName, config));
+	return useQuery(['issues', repository, config], () =>
+		Promise.all(reqArray)
+	);
+};
+
+export const useGetTest = (
+    reqs: Promise<IssueResult[] | undefined>[],
+	repositories: string[],
+	config?: SearchIssueConfig,
+) => {
+	return useQuery(['issues', JSON.stringify(repositories), JSON.stringify(config)], () => {
+		return Promise.all(reqs);
+	})
+}
