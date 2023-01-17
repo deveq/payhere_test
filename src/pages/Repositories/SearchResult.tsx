@@ -14,7 +14,7 @@ interface SearchResultProps {
 }
 
 const SearchResult = ({ page, setPage, query, index }: SearchResultProps) => {
-	const { data } = useGetRepositories(query, {
+	const {data, status} = useGetRepositories(query, {
 		order: repositoriesAsideListData[index].direction,
 		sort: repositoriesAsideListData[index].value as RepositorySortType,
 		page,
@@ -25,7 +25,17 @@ const SearchResult = ({ page, setPage, query, index }: SearchResultProps) => {
 		if (listRef.current) {
 			listRef.current.scrollTop = 0;
 		}
-	}, [page])
+	}, [page]);
+
+	if (status === 'success' && !data) {
+		/**
+		 * 할당량제한이 걸린 경우
+		 * success로 처리되기때문에, success이지만 data가 오지 않았다면
+		 * 에러를 throw해 강제로 ErrorBoundary fallback을 보여준다.
+		 */
+		throw new Error('요청이 많아 잠시 후 시도해주세요. 로그인을 하면 할당량이 늘어납니다!');
+	}
+
 	return (
 		<Suspense fallback={<div>abcd</div>}>
 			{data && (

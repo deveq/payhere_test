@@ -1,5 +1,6 @@
 import { SetStateAction, Dispatch } from 'react';
 import * as Styled from './styles';
+import useDebounce from 'hooks/useDebounce';
 
 export interface PaginationProps {
 	total: number;
@@ -21,17 +22,17 @@ const Pagination = ({ page, setPage, limit, total }: PaginationProps) => {
 		return arr;
 	};
 
-	const moveToPrev = () => {
+	const moveToPrev = useDebounce(() => {
 		setPage((prev) => prev - 1);
-	};
-
-	const moveToNext = () => {
+	}, 500);
+	
+	const moveToNext = useDebounce(() => {
 		setPage((prev) => prev + 1);
-	};
+	}, 500);
 
-	const moveToTarget = (num: number) => {
+	const moveToTarget = useDebounce((num: number) => {
 		setPage(num);
-	};
+	}, 500);
 
 	return (
 		<Styled.Container>
