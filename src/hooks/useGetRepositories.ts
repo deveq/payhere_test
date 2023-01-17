@@ -5,7 +5,7 @@ const useGetRepositories = (
 	query: string,
 	config?: SearchRepositoriesConfig,
 ) => {
-	return useQuery(['repositories', query], () =>
+	return useQuery(['repositories', query, config], () =>
 		getRepositories(query, config),
 	);
 };

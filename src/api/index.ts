@@ -2,8 +2,8 @@ import { request } from './client';
 import { RepositoryResult, IssueResult } from 'types/api';
 import qs from 'qs';
 
-type IssueSortType = 'created' | 'updated' | 'comments';
-type SortDirection = 'asc' | 'desc';
+export type IssueSortType = 'created' | 'updated' | 'comments';
+export type SortDirection = 'asc' | 'desc';
 type IssueState = 'open' | 'closed' | 'all';
 
 export interface SearchIssueConfig {
@@ -20,7 +20,7 @@ export interface SearchIssueConfig {
 	page?: number; // default 1
 }
 
-type RepositorySortType = 'starts' | 'forks' | 'help-wanted-issues' | 'updated';
+export type RepositorySortType = 'starts' | 'forks' | 'help-wanted-issues' | 'updated' | undefined;
 
 export interface SearchRepositoriesConfig {
 	sort?: RepositorySortType; // default best match
@@ -34,13 +34,13 @@ export const getRepositories = async (
 	config?: SearchRepositoriesConfig,
 ) => {
 	try {
-		let querystring = '&';
+		let querystring = '';
 		if (config) {
-			querystring += qs.stringify(config);
+			querystring += '&' + qs.stringify(config);
 		}
 
 		const response = await request.get<RepositoryResult>(
-			`/search/repositories?q=${query}`,
+			`/search/repositories?q=${query}${querystring}`,
 		);
 
 		return response.data;
