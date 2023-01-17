@@ -6,7 +6,7 @@ const useGetIssues = (
 	repository: string,
 	config?: SearchIssueConfig,
 ) => {
-	return useQuery(['issues', owner, repository], () =>
+	return useQuery(['issues', owner, repository, config], () =>
 		getIssues(owner, repository, config),
 	);
 };

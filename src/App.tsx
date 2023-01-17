@@ -8,6 +8,7 @@ import Layout from 'pages/Layout';
 import Repositories from 'pages/Repositories';
 import Settings from 'pages/Settings';
 import Issues from 'pages/Issues';
+import {} from 'react-query';
 
 function App() {
 	const themeMode = useRecoilValue(themeModeState);

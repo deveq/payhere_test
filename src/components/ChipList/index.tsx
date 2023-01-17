@@ -1,19 +1,27 @@
 import * as Styled from './styles';
 
 interface ChipListProps {
-    data: string[];
+	data: string[];
+	onClick?: (text: string) => void;
+    selectedItem?: string;
 }
 
-const ChipList = ({data}: ChipListProps) => {
-    return (
-        <Styled.ChipList>
-            {
-                data.map((item, index) => (
-                    <Styled.Chip key={item} selected={index === 0}>{item}</Styled.Chip>
-                ))
-            }
-        </Styled.ChipList>
-    )
-}
+const ChipList = ({ data, onClick, selectedItem }: ChipListProps) => {
+	return (
+		<Styled.ChipList>
+			{data.map((item) => (
+				<Styled.Chip
+					key={item}
+					selected={selectedItem === item}
+					onClick={() => {
+						if (onClick) onClick(item);
+					}}
+				>
+					{item}
+				</Styled.Chip>
+			))}
+		</Styled.ChipList>
+	);
+};
 
 export default ChipList;
