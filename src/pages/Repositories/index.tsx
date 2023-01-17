@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Aside from 'components/Aside';
 import * as Styled from 'pages/Layout/styles';
@@ -27,6 +27,7 @@ const Repositories = () => {
 				title="정렬"
 			/>
 			<Styled.CommonContainer>
+				<Suspense fallback={<div>로딩중...</div>}>
 				<Styled.CardTitle>
 					{query ? `검색어 : ${query}` : '검색어를 입력하세요'}
 				</Styled.CardTitle>
@@ -40,7 +41,7 @@ const Repositories = () => {
                         />
                     )
                 }
-				
+				</Suspense>
 			</Styled.CommonContainer>
 			<Styled.RightContainer>
 				<Styled.CardTitle>관심목록</Styled.CardTitle>

@@ -1,26 +1,46 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import {
+	QueryClient,
+	QueryClientProvider,
+	QueryErrorResetBoundary,
+} from 'react-query';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from 'components/ErrorFallback';
+import {AxiosError } from 'axios'
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement,
 );
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			suspense: true,
+			useErrorBoundary: true,
+		},
+	},
+});
 
 root.render(
 	<React.StrictMode>
-		<BrowserRouter>
-			<RecoilRoot>
-				<QueryClientProvider client={queryClient}>
-					<App />
-				</QueryClientProvider>
-			</RecoilRoot>
-		</BrowserRouter>
+		<QueryErrorResetBoundary>
+			{({ reset }) => (
+				<ErrorBoundary FallbackComponent={ErrorFallback} onReset={reset}>
+					<BrowserRouter>
+						<RecoilRoot>
+							<QueryClientProvider client={queryClient}>
+								<App />
+							</QueryClientProvider>
+						</RecoilRoot>
+					</BrowserRouter>
+				</ErrorBoundary>
+			)}
+		</QueryErrorResetBoundary>
 	</React.StrictMode>,
 );
 

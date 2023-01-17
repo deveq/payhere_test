@@ -42,7 +42,6 @@ export const getRepositories = async (
 		const response = await request.get<RepositoryResult>(
 			`/search/repositories?q=${query}${querystring}`,
 		);
-
 		return response.data;
 	} catch (error) {
 		console.error(error, 'apis - getRepositories Error');
