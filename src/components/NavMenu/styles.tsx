@@ -19,8 +19,11 @@ export const Link = styled(NavLink)`
     text-decoration: none;
     font-size: 20px;
     text-transform: capitalize;
-    &:hover,
-    &:active {
+    &:hover {
         opacity: 0.6;
+    }
+    &.active {
+        font-weight: bold;
+        text-decoration: underline;
     }
 `;

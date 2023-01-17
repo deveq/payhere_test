@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import {flexCenter} from 'styles/helper';
 
 export const Aside = styled.aside`
-    width: 300px;
+    width: 200px;
     background: ${({theme}) => theme.bg_page1};
     padding: 30px;
     box-sizing: border-box;
+    flex-shrink: 0;
 `;
 
 export const List = styled.ul`

@@ -17,18 +17,11 @@ const Settings = () => {
     const selectedIndex = useRecoilValue(asideSelectedIndex);
 
     const setTheme = () => {
-        setThemeMode((prev) => {
-            const nextTheme = prev === 'DARK' ? 'LIGHT' : 'DARK';
-            localStorage.setItem('theme', nextTheme);
-            return nextTheme;
-        });
+        setThemeMode((prev) => prev === 'DARK' ? 'LIGHT' : 'DARK');
     }
 
     const setRecord = () => {
-        setRecordMode((prev) => {
-            localStorage.setItem('record', JSON.stringify(!prev));
-            return !prev;
-        });
+        setRecordMode((prev) => !prev);
     }
 
 	const asideMenuList = ['다크모드', '검색기록', '초기화'];

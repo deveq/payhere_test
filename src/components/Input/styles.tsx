@@ -3,7 +3,7 @@ import {FiSearch} from 'react-icons/fi';
 import {flexCenter} from 'styles/helper';
 
 
-const Container = styled.div`
+export const Container = styled.form`
     ${flexCenter};
     width: 250px;
     border-radius: 10px;
@@ -14,7 +14,7 @@ const Container = styled.div`
     background: ${({theme}) => theme.bg_element1};
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
     border: none;
     outline: none;
     flex: 1;
@@ -23,7 +23,7 @@ const Input = styled.input`
     background: ${({theme}) => theme.bg_element1};
 `;
 
-const Icon = styled(FiSearch)`
+export const Icon = styled(FiSearch)`
     width: 20px;
     height: 20px;
     color: ${({theme}) => theme.text1};
@@ -33,7 +33,3 @@ const Icon = styled(FiSearch)`
         opacity: 0.6;
     }
 `;
-
-
-
-export {Input, Container, Icon};

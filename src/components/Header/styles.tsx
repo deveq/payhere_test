@@ -4,7 +4,9 @@ import {flexCenter} from 'styles/helper';
 
 export const Container = styled.header`
 	display: flex;
-	padding: 1rem 2rem;
+	padding: 0 35px;
+	height: 70px;
+	align-items: center;
 	background: ${({theme}) => theme.bg_page1};
 	box-shadow: ${({theme}) => theme.boxShadow};
 	position: relative;

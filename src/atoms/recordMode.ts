@@ -1,8 +1,8 @@
-import { atom, selector } from "recoil";
-
-const storedValue = JSON.parse(localStorage.getItem('record') || 'true');
+import { atom } from "recoil";
+import {recordEffect} from './effects';
 
 export const recordModeState = atom<boolean>({
     key: 'recordMode',
-    default: storedValue
+    default: true,
+    effects: [recordEffect]
 });

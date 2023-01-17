@@ -1,6 +1,6 @@
 import {ReactElement} from 'react';
 import * as Styled from './styles';
-import Issue, {IssueProps} from './Issue';
+import Issue, {IssueProps} from './Repository';
 
 interface IssueListProps {
     issues: IssueProps[];

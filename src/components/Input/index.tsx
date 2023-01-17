@@ -1,8 +1,9 @@
-import { ChangeEventHandler } from 'react';
+import { ChangeEventHandler, FormEventHandler } from 'react';
 import * as Styled from './styles';
 
 interface InputProps {
 	onChange?: ChangeEventHandler<HTMLInputElement>;
+	onSubmit?: FormEventHandler<HTMLFormElement>;
 	iconVisible?: boolean;
 	value?: string;
 	defaultValue?: string;
@@ -14,16 +15,21 @@ const Input = ({
 	onChange,
 	defaultValue,
 	value,
-	
-    placeholder
+    placeholder,
+	onSubmit,
 }: InputProps) => {
 	return (
-		<Styled.Container>
+		<Styled.Container onSubmit={(e) => {
+			e.preventDefault();
+			if (onSubmit) onSubmit(e);
+		}}>
 			<Styled.Input
+				type="text"
 				onChange={onChange}
 				value={value}
 				defaultValue={defaultValue}
                 placeholder={placeholder}
+				autoComplete={'off'}
 			/>
 			{iconVisible && <Styled.Icon />}
 		</Styled.Container>
