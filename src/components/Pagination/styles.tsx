@@ -9,6 +9,7 @@ interface PageButtonProps {
 export const Container = styled.nav`
     ${flexCenter};
     gap: 4px;
+    height: 20px;
 `;
 
 export const PageButton = styled.button<PageButtonProps>`

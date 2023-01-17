@@ -8,7 +8,6 @@ import Layout from 'pages/Layout';
 import Repositories from 'pages/Repositories';
 import Settings from 'pages/Settings';
 import Issues from 'pages/Issues';
-import SearchResult from 'pages/SearchResult';
 
 function App() {
 	const themeMode = useRecoilValue(themeModeState);
@@ -20,7 +19,6 @@ function App() {
 					<Route index element={<Issues />} />
 					<Route path="/repositories" element={<Repositories />} />
 					<Route path="/settings" element={<Settings />} />
-					<Route path="/searchResult" element={<SearchResult />} />
 				</Route>
 			</Routes>
 		</ThemeProvider>

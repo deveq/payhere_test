@@ -74,5 +74,7 @@ export const IssueList = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    overflow: hidden;
+    flex-shrink: 0;
+    max-height: 100%;
+    overflow: auto;
 `;

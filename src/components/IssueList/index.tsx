@@ -1,11 +1,13 @@
+import {ReactElement} from 'react';
 import * as Styled from './styles';
 import Issue, {IssueProps} from './Issue';
 
 interface IssueListProps {
     issues: IssueProps[];
+    pagination?: ReactElement;
 }
 
-const IssueList = ({issues}: IssueListProps) => {
+const IssueList = ({issues, pagination}: IssueListProps) => {
     return (
         <Styled.IssueList>
             {
@@ -13,6 +15,11 @@ const IssueList = ({issues}: IssueListProps) => {
                     <Issue {...issue} key={`${issue.title} ${issue.info}`} />
                 ))
             }
+            <>
+                {
+                    pagination
+                }
+            </>
         </Styled.IssueList>
     )
 }

@@ -1,12 +1,27 @@
-import {useState} from 'react';
+import {ReactElement} from 'react';
 import * as Styled from './styles';
+import Issue, {IssueProps} from './Repository';
 
-const RepositoryList = () => {
+interface IssueListProps {
+    issues: IssueProps[];
+    pagination?: ReactElement;
+}
+
+const IssueList = ({issues, pagination}: IssueListProps) => {
     return (
-        <Styled.Container>
-            dddd
-        </Styled.Container>
+        <Styled.IssueList>
+            {
+                issues.map(issue => (
+                    <Issue {...issue} key={`${issue.title} ${issue.info}`} />
+                ))
+            }
+            <>
+                {
+                    pagination
+                }
+            </>
+        </Styled.IssueList>
     )
 }
 
-export default RepositoryList;
+export default IssueList;

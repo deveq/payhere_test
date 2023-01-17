@@ -1,9 +1,12 @@
 import {useState} from 'react';
 import {useSearchParams} from 'react-router-dom';
 import Aside from 'components/Aside';
-import * as Styled from './styles';
+import * as Styled from 'pages/Layout/styles';
 import Pagination from 'components/Pagination';
 import ChipList from 'components/ChipList';
+import Item from 'components/Item';
+import {repoResult} from 'api/mockData';
+
 
 const asideMenuList = [
     '베스트 매치',
@@ -22,15 +25,33 @@ const Repositories = () => {
     return (
         <>
             <Aside data={asideMenuList} title="정렬" />
-            <Styled.Container>
-                <Styled.PaginationWrapper>
+            <Styled.CommonContainer>
+                <Styled.CardTitle>
+                    {
+                        query 
+                            ? `검색어 : ${query}`
+                            : '검색어를 입력하세요'
+                    }
+                </Styled.CardTitle>
+                <Styled.ListWrapper>
+                    {
+                        repoResult.items.map(item => 
+                            <Item 
+                                key={`${item.full_name}_${item.created_at}`}
+                                title={item.full_name}
+                                description={item.description}
+                                meta={item.created_at}
+                                onClick={() => alert(`${item.full_name} 추가`) }
+                            />
+                        )
+                    }
                     <Pagination total={332} limit={10} page={page} setPage={setPage} />
-                </Styled.PaginationWrapper>
-            </Styled.Container>
-            <Styled.InterestsContainer>
+                </Styled.ListWrapper>
+            </Styled.CommonContainer>
+            <Styled.RightContainer>
                 <Styled.CardTitle>관심목록</Styled.CardTitle>
                 <ChipList data={['react', 'react-native', 'deveqreact-native','react-nativereact-native']} />
-            </Styled.InterestsContainer>
+            </Styled.RightContainer>
         </>
     )
 }
