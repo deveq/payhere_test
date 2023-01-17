@@ -9,17 +9,23 @@ interface ChipListProps {
 const ChipList = ({ data, onClick, selectedItem }: ChipListProps) => {
 	return (
 		<Styled.ChipList>
-			{data.map((item) => (
-				<Styled.Chip
-					key={item}
-					selected={selectedItem === item}
-					onClick={() => {
-						if (onClick) onClick(item);
-					}}
-				>
-					{item}
-				</Styled.Chip>
-			))}
+			{
+				data.length !== 0  ?(
+					data.map((item) => (
+						<Styled.Chip
+							key={item}
+							selected={selectedItem === item}
+							onClick={() => {
+								if (onClick) onClick(item);
+							}}
+						>
+							{item}
+						</Styled.Chip>
+					))
+				) : (
+					<div>관심 목록을 추가해주세요~</div>
+				)
+			}
 		</Styled.ChipList>
 	);
 };

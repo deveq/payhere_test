@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
 import { lightTheme, darkTheme } from 'styles/theme';
-import { themeModeState } from 'atoms/themeMode';
+import { themeModeState } from 'atoms/themeModeState';
 import Layout from 'pages/Layout';
 import Repositories from 'pages/Repositories';
 import Settings from 'pages/Settings';

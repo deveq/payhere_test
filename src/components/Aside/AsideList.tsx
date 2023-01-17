@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import * as Styled from './styles';
 import {useRecoilState} from 'recoil';
-import {asideSelectedIndex} from 'atoms/asideSelectedIndex';
+import {asideSelectedIndex} from 'atoms/asideSelectedIndexState';
 
 interface AsideListProps {
 	data: string[];

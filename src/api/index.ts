@@ -4,7 +4,7 @@ import qs from 'qs';
 
 export type IssueSortType = 'created' | 'updated' | 'comments';
 export type SortDirection = 'asc' | 'desc';
-type IssueState = 'open' | 'closed' | 'all';
+export type IssueState = 'open' | 'closed' | 'all';
 
 export interface SearchIssueConfig {
 	milestone?: string;
@@ -49,18 +49,16 @@ export const getRepositories = async (
 };
 
 export const getIssues = async (
-	owner: string,
 	repository: string,
 	config?: SearchIssueConfig,
 ) => {
 	try {
 		let querystring = '';
 		if (config) {
-			querystring = qs.stringify(config);
+			querystring += qs.stringify(config);
 		}
-		const response = await request.get<IssueResult>(
-			`/repos/${owner}/${repository}/issues?${querystring}`,
-		);
+		const url = `/repos/${repository}/issues?${querystring}`;
+		const response = await request.get<IssueResult[]>(url);
 		return response.data;
 	} catch (error) {
 		console.error(error, 'apis - getIssues Error');
