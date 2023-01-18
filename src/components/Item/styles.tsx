@@ -30,11 +30,9 @@ export const BottomInfo = styled.div`
     font-size: 14px;
 `;
 
-export const Title = styled.div`
+export const Title = styled.h4`
     color: ${({theme}) => theme.primary};
     font-weight: bold;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     cursor: pointer;
 `;
 

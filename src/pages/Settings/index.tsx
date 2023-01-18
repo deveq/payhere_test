@@ -1,17 +1,23 @@
 import { useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useResetRecoilState } from 'recoil';
 import ToggleButton from 'components/ToggleButton';
 import Button, { Destructive, Primary } from 'components/Button';
 import * as Styled from './styles';
 import Aside from 'components/Aside';
-// import {themeModeState} from '../atoms/themeMode';
-import { themeModeState } from 'atoms/themeModeState';
-import { recordModeState } from 'atoms/recordModeState';
+
+import {
+	themeModeState,
+	recordModeSelector,
+	repositoriesState,
+	recordHistoryState,
+} from 'atoms';
 
 const Settings = () => {
 	// TODO: 다크모드, 검색기록, 계정, 초기화 함수 만들기
 	const [themeMode, setThemeMode] = useRecoilState(themeModeState);
-	const [recordMode, setRecordMode] = useRecoilState(recordModeState);
+	const [recordMode, setRecordMode] = useRecoilState(recordModeSelector);
+	const resetRepositories = useResetRecoilState(repositoriesState);
+	const resetRecordHistory = useResetRecoilState(recordHistoryState);
 	// const selectedIndex = useRecoilValue(asideSelectedIndex);
 	const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -21,6 +27,16 @@ const Settings = () => {
 
 	const setRecord = () => {
 		setRecordMode((prev) => !prev);
+	};
+
+	const askDelete: <T extends () => void>(text: string, func: T) => void = (
+		text,
+		func,
+	) => {
+		const answer = confirm(text);
+		if (answer) {
+			func();
+		}
 	};
 
 	const menuList = ['다크모드', '검색기록', '초기화'];
@@ -41,17 +57,31 @@ const Settings = () => {
 			},
 			{
 				label: '검색 기록 삭제',
-				button: <Destructive size="sm">삭제</Destructive>,
+				button: (
+					<Destructive
+						onClick={() => {
+							askDelete('검색기록을 지우시겠습니까?', resetRecordHistory);
+						}}
+						size="sm"
+					>
+						삭제
+					</Destructive>
+				),
 			},
 		],
 		[
 			{
 				label: '관심 목록 지우기',
-				button: <Destructive size="sm">삭제</Destructive>,
-			},
-			{
-				label: '모든 정보 지우기',
-				button: <Destructive size="sm">삭제</Destructive>,
+				button: (
+					<Destructive
+						onClick={() => {
+							askDelete('관심목록을 지우시겠습니까?', resetRepositories);
+						}}
+						size="sm"
+					>
+						삭제
+					</Destructive>
+				),
 			},
 		],
 	];

@@ -20,39 +20,10 @@ export const themeEffect: AtomEffect<string> = ({ onSet, setSelf }) => {
 	});
 };
 
-// export const recordEffect: AtomEffect<boolean> = ({ onSet, setSelf }) => {
-// 	// localStorage로부터 record를 가져온다
-// 	const savedValue = localStorage.getItem('record');
-// 	if (savedValue !== null) {
-// 		setSelf(JSON.parse(savedValue));
-// 	}
-
-// 	onSet((newValue, _, isReset) => {
-// 		isReset
-// 			? localStorage.removeItem('record')
-// 			: localStorage.setItem('record', JSON.stringify(newValue));
-// 	});
-// };
-
-// export const repositoriesEffect: AtomEffect<string[]> = ({
-// 	onSet,
-// 	setSelf,
-// }) => {
-// 	const savedValue = localStorage.getItem('repositories');
-// 	if (savedValue !== null) {
-// 		setSelf(JSON.parse(savedValue));
-// 	}
-
-// 	onSet((newValue, _, isReset) => {
-// 		isReset
-// 			? localStorage.removeItem('repositories')
-// 			: localStorage.setItem('repositories', JSON.stringify(newValue));
-// 	});
-// };
-
 export const localStorageEffect: <T>(key: string) => AtomEffect<T> =
 	(key: string) =>
 	({ setSelf, onSet }) => {
+
 		const savedValue = localStorage.getItem(key);
 		if (savedValue != null) {
 			setSelf(JSON.parse(savedValue));
