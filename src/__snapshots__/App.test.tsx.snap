@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> 정상적으로 렌더링되었는지 확인한다 1`] = `
+<div>
+  <div
+    class="sc-eDWCr ePZenz"
+  >
+    <header
+      class="sc-bcXHqe jlxFIQ"
+    >
+      <h1
+        class="sc-dkrFOg iZwoRf"
+      >
+        <a
+          href="/"
+        >
+          <svg
+            class="sc-gswNZR iVgNmh"
+          >
+            logo.svg
+          </svg>
+          <span
+            class="sc-jSUZER fLXdZd"
+          >
+            페이히어
+          </span>
+        </a>
+      </h1>
+      <form
+        class="sc-gKPRtg bOIQVQ"
+      >
+        <input
+          autocomplete="off"
+          class="sc-iBYQkv jOdFth"
+          placeholder="검색어를 입력해주세요"
+          type="text"
+          value=""
+        />
+        <svg
+          class="sc-ftTHYK jIPaZX"
+          data-testid="icon"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+          />
+          <line
+            x1="21"
+            x2="16.65"
+            y1="21"
+            y2="16.65"
+          />
+        </svg>
+        <ul
+          class="sc-pyfCe hyTpit"
+        />
+      </form>
+      <nav
+        class="sc-hLBbgP bvFxTk"
+      >
+        <ul
+          class="sc-kDvujY lmbbTK"
+        >
+          <li
+            class="sc-ipEyDJ fvrokq"
+          >
+            <a
+              aria-current="page"
+              class="sc-csuSiG WiRus active"
+              href="/"
+            >
+              issue
+            </a>
+          </li>
+          <li
+            class="sc-ipEyDJ fvrokq"
+          >
+            <a
+              class="sc-csuSiG WiRus"
+              href="/repositories"
+            >
+              repositories
+            </a>
+          </li>
+          <li
+            class="sc-ipEyDJ fvrokq"
+          >
+            <a
+              class="sc-csuSiG WiRus"
+              href="/settings"
+            >
+              settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main
+      class="sc-bqWxrE vsAHH"
+    >
+      <aside
+        class="sc-idXgbr gWKAmg"
+      >
+        <h2
+          class="sc-hHTYSt aNuIf"
+        >
+          정렬
+        </h2>
+        <ul
+          class="sc-dIfARi jhCOVE"
+        >
+          <li
+            class="sc-dmctIk btRMTg"
+          >
+            최신순
+          </li>
+          <li
+            class="sc-dmctIk erqxaq"
+          >
+            오래된 순
+          </li>
+        </ul>
+      </aside>
+      <div
+        class="sc-fEXmlR CfDCI"
+      >
+        <h3
+          class="sc-fnGiBr dehekD"
+        >
+          검색을 통해 관심목록을 등록해주세요~
+        </h3>
+      </div>
+      <div
+        class="sc-bjfHbI kqwySa"
+      >
+        <h3
+          class="sc-fnGiBr dehekD"
+        >
+          관심목록
+        </h3>
+        <div
+          class="sc-bBABsx kjQzkg"
+        >
+          <p
+            class="sc-iveFHk caNIXG"
+          >
+            관심 목록을 추가해주세요~
+          </p>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+`;
