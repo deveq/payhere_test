@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 export interface ButtonProps {
@@ -11,13 +11,13 @@ export interface ButtonProps {
 
 const handleSize = (size?: ButtonSize) => {
     if (size === 'sm') return '0.5rem 1rem';
-    if (size === 'md') return '1rem 2rem';
+    if (size === 'md') return '0.75rem 1.5rem';
     if (size === 'lg') return '1rem 2rem';
     return '0.75rem 1.5rem';
 }
 
 export const Button = styled.button<ButtonProps>`
-    background-color: ${({backgroundColor, theme}) => 
+    background: ${({backgroundColor, theme}) => 
         backgroundColor || theme.bg_element2
     };
     border-radius: 5px;
@@ -30,7 +30,7 @@ export const Button = styled.button<ButtonProps>`
     border: ${({showShadow, theme}) => showShadow ? 'none' : `1px solid ${theme.border2}` };
     &:hover,
     &:active {
-        background-color: ${({theme}) => theme.bg_element3};
+        background: ${({theme}) => theme.bg_element3};
     }
     cursor: pointer;
 `;
@@ -40,16 +40,16 @@ Button.defaultProps = {
 }
 
 export const Primary = styled(Button)`
-    background-color: ${({theme}) => theme.primary};
+    background: ${({theme}) => theme.primary};
     color: white;
 `;
 
 export const Destructive = styled(Button)`
-    background-color: ${({theme}) => theme.destructive};
+    background: ${({theme}) => theme.destructive};
     color: white;
     border: none;
     &:hover,
     &:active {
-        background-color: ${({theme}) => theme.destructive};
+        background: ${({theme}) => theme.destructive};
     }
 `;
