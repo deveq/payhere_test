@@ -67,9 +67,6 @@ const Header = () => {
 			<Styled.Nav>
 				<NavMenu list={navMenuList} />
 			</Styled.Nav>
-			{/* <Styled.LoginContainer>
-				<Button>로그인</Button>
-			</Styled.LoginContainer> */}
 		</Styled.Container>
 	);
 };
