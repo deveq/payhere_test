@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChipList /> 정상적으로 렌더링 되는지 확인 1`] = `
+<div>
+  <div
+    class="sc-gswNZR mmBBh"
+  >
+    <div
+      class="sc-bcXHqe jhqMJh"
+    >
+      a
+    </div>
+    <div
+      class="sc-bcXHqe jhqMJh"
+    >
+      b
+    </div>
+    <div
+      class="sc-bcXHqe jhqMJh"
+    >
+      c
+    </div>
+  </div>
+</div>
+`;

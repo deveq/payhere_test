@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavMenu /> 정상적으로 렌더링되었는지 확인한다 1`] = `
+<div>
+  <ul
+    class="sc-bcXHqe jZUBXE"
+  >
+    <li
+      class="sc-gswNZR bnXthA"
+    >
+      <a
+        class="sc-dkrFOg byeDqj"
+        href="/to1"
+      >
+        title1
+      </a>
+    </li>
+    <li
+      class="sc-gswNZR bnXthA"
+    >
+      <a
+        class="sc-dkrFOg byeDqj"
+        href="/to2"
+      >
+        title2
+      </a>
+    </li>
+    <li
+      class="sc-gswNZR bnXthA"
+    >
+      <a
+        class="sc-dkrFOg byeDqj"
+        href="/to3"
+      >
+        title3
+      </a>
+    </li>
+  </ul>
+</div>
+`;

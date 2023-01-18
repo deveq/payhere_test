@@ -4,6 +4,7 @@ declare module 'styled-components' {
     export interface DefaultTheme {
         bg_page1: string;
         bg_page2: string;
+        bg_page3: string;
         bg_element1: string;
         bg_element2: string;
         bg_element3: string;
@@ -20,5 +21,10 @@ declare module 'styled-components' {
         primary: string;
         destructive: string;
         success: string;
+        path1: string;
+        path2: string;
+        path3: string;
+        opacity1: number;
+        opacity2: number;
     }
 }

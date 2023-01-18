@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> 정상적으로 렌더링되는지 확인 1`] = `
+<div>
+  <div
+    class="sc-bcXHqe jcLPlY"
+  >
+    <div
+      data-testid="mock"
+    />
+  </div>
+</div>
+`;

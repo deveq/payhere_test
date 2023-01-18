@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from 'styles/GlobalStyle';
+import { lightTheme, darkTheme } from 'styles/theme';
+import { themeModeState } from 'atoms/themeModeState';
+import Layout from 'pages/Layout';
+import Repositories from 'pages/Repositories';
+import Settings from 'pages/Settings';
+import Issues from 'pages/Issues';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const themeMode = useRecoilValue(themeModeState);
+
+	return (
+		<ThemeProvider theme={themeMode === 'DARK' ? darkTheme : lightTheme} >
+			<GlobalStyle />
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<Issues />} />
+					<Route path="/repositories" element={<Repositories />} />
+					<Route path="/settings" element={<Settings />} />
+				</Route>
+			</Routes>
+		</ThemeProvider>
+	);
 }
 
 export default App;

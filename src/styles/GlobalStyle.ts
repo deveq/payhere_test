@@ -3,10 +3,7 @@ import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
     ${reset};
-    /* body {
-        background-color: ${({theme}) => theme.bg_page1};
-        color: ${({theme}) => theme.text1};
-    } */
+    font-family:'Noto Sans KR','Apple SD Gothic Neo',Sans-serif;
 `;
 
 export default GlobalStyle;

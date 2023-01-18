@@ -3,6 +3,7 @@ import { DefaultTheme } from "styled-components";
 export const lightTheme: DefaultTheme = {
     bg_page1: '#F8F9FA',
     bg_page2: '#FFFFFF',
+    bg_page3: '#F2F3F5',
     bg_element1: '#E9ECEF',
     bg_element2: '#F8F9FA',
     bg_element3: '#FFFFFF',
@@ -18,12 +19,18 @@ export const lightTheme: DefaultTheme = {
     primary: '#216fdb',
     destructive: '#ce3426',
     success: '#157f40',
-    boxShadow: '0 5px 10px rgba(100, 100, 100, 0.15), 0 2px 4px rgba(100, 100, 100, 0.15)',
+    boxShadow: '0 5px 10px rgba(100,100,100,0.15),0 2px 4px rgba(100,100,100,0.15)',
+    path1: '#A164F9',
+    path2: '#163BD8',
+    path3: '#1D99FF',
+    opacity1: 1,
+    opacity2: 1,
 };
 
 export const darkTheme: DefaultTheme = {
     bg_page1: '#121212',
     bg_page2: '#121212',
+    bg_page3: '#252525',
     bg_element1: '#1E1E1E',
     bg_element2: '#1E1E1E',
     bg_element3: '#252525',
@@ -37,7 +44,12 @@ export const darkTheme: DefaultTheme = {
     border3: '#4D4D4D',
     border4: '#2A2A2A',
     primary: '#216fdb',
-    destructive: '#ce3426',
+    destructive: '#ce3426bb',
     success: '#157f40',
     boxShadow: '0px 5px 10px rgba(40, 40, 40, 1), 0px 2px 4px rgba(40, 40, 40, 1)',
+    path1: '#ffffff',
+    path2: '#ffffff',
+    path3: '#ffffff',
+    opacity1: 0.7,
+    opacity2: 1,
 };

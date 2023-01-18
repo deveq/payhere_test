@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BlindText /> 컴포넌트가 정상적으로 렌더링 되었는지 확인한다 1`] = `
+<div>
+  <span
+    class="sc-bcXHqe hNOtCR"
+  >
+    Button Test
+  </span>
+</div>
+`;

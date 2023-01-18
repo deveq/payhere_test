@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Aside /> 정상적으로 렌더링되는지 확인한다. 1`] = `
+.c0 {
+  width: 200px;
+  background: #F8F9FA;
+  padding: 30px;
+  box-sizing: border-box;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c2 {
+  display: grid;
+  gap: 5px;
+}
+
+.c1 {
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #DEE2E6;
+  color: #212529;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-indent: 10px;
+}
+
+.c3 {
+  background: #E9ECEF;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #495057;
+  cursor: pointer;
+}
+
+.c3:hover,
+.c3:active {
+  background: #E9ECEF;
+}
+
+.c4 {
+  background: transparent;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #868E96;
+  cursor: pointer;
+}
+
+.c4:hover,
+.c4:active {
+  background: #E9ECEF;
+}
+
+<div>
+  <aside
+    class="c0"
+  >
+    <h2
+      class="c1"
+    >
+      title
+    </h2>
+    <ul
+      class="c2"
+    >
+      <li
+        class="c3"
+      >
+        a
+      </li>
+      <li
+        class="c4"
+      >
+        b
+      </li>
+      <li
+        class="c4"
+      >
+        c
+      </li>
+      <li
+        class="c4"
+      >
+        d
+      </li>
+    </ul>
+  </aside>
+</div>
+`;
