@@ -24,7 +24,6 @@ describe('<Pagination />', () => {
     })
     
     it('only Arrow Pagination이 정상렌더링 되는지 확인한다', () => {
-        // const {result: {current: [page, setPage]}} = renderHook(() => useState(1));
         const {result} = renderHook(() => useState(1));
         const [page, setPage] = result.current;
         const {container} = renderWithWrapper(<Pagination 
@@ -56,36 +55,9 @@ describe('<Pagination />', () => {
         />)
 
         const pagination = screen.getByRole('navigation');
-        // const buttons = screen.getAllByRole('button');
         const button = screen.getByText(13);
         userEvent.click(button);
 
         expect(pagination).toBeInTheDocument();
     })
-})
-
-// export interface PaginationProps {
-// 	onlyArrow?: boolean;
-// }
-
-// interface PageButtonProps {
-//   selected?: boolean;
-//   hide?: boolean;
-// }
-
-// export const Container = styled.nav`
-// `;
-
-// export const PageButton = styled.button<PageButtonProps>`
-//   background: ${({theme, selected}) => selected ? theme.primary : 'transparent'};
-//   color: ${({theme, selected}) => selected ? 'white' : theme.text1};
-//   visibility: ${({hide}) => hide ? 'hidden' : 'visible'};
-//   &:hover {
-//     transform: translateY(-2px);
-//     cursor: pointer;
-//   }
-//   &[disabled] {
-//     cursor: revert;
-//     transform: revert;
-//   }
-// `;
+});

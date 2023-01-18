@@ -19,13 +19,4 @@ export const recordModeSelector = selector({
     }
 })
 
-// selector({
-//     key: 'tempCelcius',
-//     get: ({get}) => ((get(tempFahrenheit) - 32) * 5) / 9,
-//     set: ({set}, newValue) =>
-//       set(
-//         tempFahrenheit,
-//         newValue instanceof DefaultValue ? newValue : (newValue * 9) / 5 + 32,
-//       ),
-//   });
 export {recordHistoryState};
