@@ -7,7 +7,7 @@ interface ToggleButtonProps {
 
 const ToggleButton = ({clicked, onClick}: ToggleButtonProps) => {
     return (
-        <Styled.Container onClick={onClick} clicked={clicked}>
+        <Styled.Container onClick={onClick} clicked={clicked} title="toggleButton">
             <Styled.Space clicked={clicked} />
             <Styled.Thumb clicked={clicked} />
         </Styled.Container>

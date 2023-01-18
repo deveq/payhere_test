@@ -24,8 +24,6 @@ export const Chip = styled.div<ChipProps>`
 
 export const ChipList = styled.div`
     display: flex;
-    /* flex-direction: column;
-    align-items: flex-start; */
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 10px;

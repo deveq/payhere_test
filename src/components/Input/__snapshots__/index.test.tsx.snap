@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> props에 따라 정상렌더링되는지 확인한다 1`] = `
+<div>
+  <form
+    class="sc-bcXHqe hSmhPQ"
+  >
+    <input
+      autocomplete="off"
+      class="sc-gswNZR jTRvUa"
+      type="text"
+      value=""
+    />
+    <svg
+      class="sc-dkrFOg cikoXo"
+      data-testid="icon"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="11"
+        cy="11"
+        r="8"
+      />
+      <line
+        x1="21"
+        x2="16.65"
+        y1="21"
+        y2="16.65"
+      />
+    </svg>
+    <ul
+      class="sc-hLBbgP fGWmYr"
+    />
+  </form>
+</div>
+`;
+
+exports[`<Input /> 정상적으로 렌더링 되는지 확인한다 1`] = `
+<div>
+  <form
+    class="sc-bcXHqe hSmhPQ"
+  >
+    <input
+      autocomplete="off"
+      class="sc-gswNZR jTRvUa"
+      type="text"
+      value=""
+    />
+    <svg
+      class="sc-dkrFOg cikoXo"
+      data-testid="icon"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="11"
+        cy="11"
+        r="8"
+      />
+      <line
+        x1="21"
+        x2="16.65"
+        y1="21"
+        y2="16.65"
+      />
+    </svg>
+    <ul
+      class="sc-hLBbgP fGWmYr"
+    />
+  </form>
+</div>
+`;

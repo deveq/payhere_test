@@ -53,7 +53,6 @@ const Input = ({
 						<Styled.HistoryItem 
 						onClick={() => {
 							if (!onClickHistoryItem) return;
-							console.log('얍얍얍');
 							onClickHistoryItem(item)
 						}}
 						key={item}>{item}</Styled.HistoryItem>

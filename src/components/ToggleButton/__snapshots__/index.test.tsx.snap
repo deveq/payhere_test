@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToggleButton /> 정상적으로 렌더링 되었는지 확인한다 1`] = `
+.c0 {
+  width: 60px;
+  height: 30px;
+  background: gray;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 30px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.c2 {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background: whitesmoke;
+  border: 2px solid gray;
+  box-sizing: border-box;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.c1 {
+  -webkit-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+<div>
+  <div
+    class="c0"
+    title="toggleButton"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    />
+  </div>
+</div>
+`;
