@@ -1,6 +1,5 @@
 import {screen} from '@testing-library/react';
 import {renderWithWrapper} from 'tests';
-import {lightTheme} from 'styles/theme';
 import NavMenu from './index';
 
 describe('<NavMenu />', () => {
@@ -17,21 +16,4 @@ describe('<NavMenu />', () => {
         expect(list.childElementCount).toBe(data.length);
         expect(container).toMatchSnapshot();
     })
-})
-
-
-// export const List = styled.ul`
-// `;
-
-// export const ListItem = styled.li`
-// `
-// export const Link = styled(NavLink)`
-//     color: ${({theme}) => theme.text1};
-//     &:hover {
-//         opacity: 0.6;
-//     }
-//     &.active {
-//         font-weight: bold;
-//         text-decoration: underline;
-//     }
-// `;
+});

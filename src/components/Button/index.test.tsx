@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-// jest-styled-components를 import하면 toHaveStyleRule을 사용할 수 있다.
 import 'jest-styled-components';
 import Button, {Destructive, Primary} from './index';
 import {renderWithWrapper} from 'tests';

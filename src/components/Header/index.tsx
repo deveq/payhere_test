@@ -36,7 +36,6 @@ const Header = () => {
 				}
 				const nextHistory = [...prev];
 
-				// 저장된 history가 3개 이상이면 오래된순 삭제한다.
 				if (nextHistory.length === 3) {
 					nextHistory.shift();
 				}
