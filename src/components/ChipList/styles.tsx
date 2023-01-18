@@ -31,4 +31,6 @@ export const ChipList = styled.div`
     margin-bottom: 10px;
 `;
 
-
+export const Message = styled.p`
+    color: ${({theme}) => theme.text1};
+`;
