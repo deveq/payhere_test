@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -25,7 +26,7 @@ const queryClient = new QueryClient({
 });
 
 root.render(
-	// <React.StrictMode>
+	<React.StrictMode>
 		<QueryErrorResetBoundary>
 			{({ reset }) => (
 				<ErrorBoundary FallbackComponent={ErrorFallback} onReset={reset}>
@@ -39,7 +40,7 @@ root.render(
 				</ErrorBoundary>
 			)}
 		</QueryErrorResetBoundary>
-	// </React.StrictMode>,
+	</React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

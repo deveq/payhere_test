@@ -18,7 +18,6 @@ export const ListWrapper = styled.ul`
     flex-direction: column;
     gap: 10px;
     flex-shrink: 0;
-    /* max-height: calc(100% - 100px); */
     flex: 1;
     overflow: auto;
 `;
