@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-// import {BsCheckCircle, BsSlashCircle, } from 'react-icons/bs';
-// import {TbCircleDot} from 'react-icons/tb';
-// import {IconBaseProps} from 'react-icons'
 
 export const Container = styled.li`
     display: flex;

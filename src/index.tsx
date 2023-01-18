@@ -1,4 +1,3 @@
-import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -12,7 +11,6 @@ import {
 } from 'react-query';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorFallback from 'components/ErrorFallback';
-import {AxiosError } from 'axios'
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement,

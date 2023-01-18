@@ -27,7 +27,9 @@ export const Input = styled.input`
 	background: ${({ theme }) => theme.bg_element1};
 `;
 
-export const Icon = styled(FiSearch)`
+export const Icon = styled(FiSearch).attrs({
+	'data-testid': 'icon'
+})`
 	width: 20px;
 	height: 20px;
 	color: ${({ theme }) => theme.text1};

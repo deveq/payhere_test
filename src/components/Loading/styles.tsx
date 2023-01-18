@@ -8,7 +8,9 @@ export const Container = styled.div`
     ${flexCenter};
 `;
 
-export const Indicator = styled(AiOutlineLoading)`
+export const Indicator = styled(AiOutlineLoading).attrs({
+    'data-testid': 'icon'
+})`
     width: 200px;
     height: 200px;
     animation: round 1s ease-in-out infinite;

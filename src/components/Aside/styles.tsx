@@ -25,14 +25,14 @@ export const Title = styled.h2`
 `;
 
 export const ListItem = styled.li<{selected: boolean}>`
-    background-color: ${({selected,theme}) => selected ? theme.bg_element1 : 'transparent'};
+    background: ${({selected,theme}) => selected ? theme.bg_element1 : 'transparent'};
     padding: 15px 20px;
     border-radius: 10px;
     font-weight: bold;
     color: ${({selected, theme}) => selected ? theme.text2 : theme.text3};
     &:hover,
     &:active {
-        background-color: ${({theme}) => theme.bg_element1};
+        background: ${({theme}) => theme.bg_element1};
     };
     cursor: pointer;
 `;

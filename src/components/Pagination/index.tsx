@@ -76,20 +76,6 @@ const Pagination = ({
 						</Styled.PageButton>
 					))}
 			</>
-			{/* <>
-				{!onlyArrow && endPage !== numPages && (
-					<>
-						<Styled.PageButton disabled>...</Styled.PageButton>
-						<Styled.PageButton
-							onClick={() => {
-								moveToTarget(numPages);
-							}}
-						>
-							{numPages}
-						</Styled.PageButton>
-					</>
-				)}
-			</> */}
 			<Styled.PageButton
 				hide={numPages === page}
 				onClick={moveToNext}
