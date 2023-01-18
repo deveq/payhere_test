@@ -19,7 +19,7 @@ export const lightTheme: DefaultTheme = {
     primary: '#216fdb',
     destructive: '#ce3426',
     success: '#157f40',
-    boxShadow: '0 5px 10px rgba(100, 100, 100, 0.15), 0 2px 4px rgba(100, 100, 100, 0.15)',
+    boxShadow: '0 5px 10px rgba(100,100,100,0.15),0 2px 4px rgba(100,100,100,0.15)',
     path1: '#A164F9',
     path2: '#163BD8',
     path3: '#1D99FF',

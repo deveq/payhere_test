@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> 컴포넌트가 정상적으로 렌더링 되었는지 확인한다 1`] = `
+.c0 {
+  background: #F8F9FA;
+  border-radius: 5px;
+  color: #212529;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  box-shadow: none;
+  border: 1px solid #ADB5BD;
+  cursor: pointer;
+}
+
+.c0:hover,
+.c0:active {
+  background: #FFFFFF;
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    Button Test
+  </button>
+</div>
+`;
