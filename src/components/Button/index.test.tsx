@@ -69,6 +69,7 @@ describe('<Button />', () => {
 
         expect(smallButton).toBeInTheDocument();
         expect(smallButton).toHaveStyleRule('padding', '0.5rem 1rem');
+
     })
 
     it('hover가 정상동작하는지 확인', () => {
@@ -132,16 +133,6 @@ describe('<Button />', () => {
             background: lightTheme.primary,
             color: 'white',
         })
-
-    // export const Destructive = styled(Button)`
-    // background-color: ${({theme}) => theme.destructive};
-    // color: white;
-    // border: none;
-    // &:hover,
-    // &:active {
-    //     background-color: ${({theme}) => theme.destructive};
-    // }
-
     })
 
 })
