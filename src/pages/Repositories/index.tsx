@@ -7,6 +7,7 @@ import { repositoriesAsideListData } from 'assets/asideListData';
 import { repositoriesState } from 'atoms/repositoriesState';
 import { useRecoilState } from 'recoil';
 import SearchResult from './SearchResult';
+import Loading from 'components/Loading';
 
 const Repositories = () => {
 	const [searchParams] = useSearchParams();
@@ -44,7 +45,7 @@ const Repositories = () => {
 				title="정렬"
 			/>
 			<Styled.CommonContainer>
-				<Suspense fallback={<div>로딩중...</div>}>
+				<Suspense fallback={<Loading />}>
 					<Styled.CardTitle>
 						{query ? `검색어 : ${query}` : '검색어를 입력하세요'}
 					</Styled.CardTitle>

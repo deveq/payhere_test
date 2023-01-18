@@ -7,6 +7,7 @@ import { repositoriesAsideListData } from 'assets/asideListData';
 import { RepositorySortType } from 'api';
 import {useSetRecoilState} from 'recoil';
 import {repositoriesState} from 'atoms/repositoriesState';
+import Loading from 'components/Loading';
 
 interface SearchResultProps {
 	page: number;
@@ -59,7 +60,7 @@ const SearchResult = ({ page, setPage, query, index }: SearchResultProps) => {
 	}
 
 	return (
-		<Suspense fallback={<div>abcd</div>}>
+		<Suspense fallback={<Loading />}>
 			{data && (
 				<Styled.ListWrapper ref={listRef}>
 					{data.items.map((item) => (
