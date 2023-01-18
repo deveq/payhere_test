@@ -1,5 +1,3 @@
-import { Repository, IssueResult } from 'types/api';
-import { issueResult, repoResult } from 'api/mockData';
 import * as Styled from './styles';
 
 interface ItemProps {

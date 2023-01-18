@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {flexCenter} from 'styles/helper';
 
 export const Aside = styled.aside`
     width: 200px;

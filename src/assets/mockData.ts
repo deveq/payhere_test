@@ -1,6 +1,6 @@
 import {RepositoryResult, Repository, IssueResult} from 'types/api';
 
-export const repoResult: RepositoryResult = {
+export const mockRepoResult: RepositoryResult = {
     "total_count": 163,
     "incomplete_results": false,
     "items": [
@@ -3130,7 +3130,7 @@ export const repoResult: RepositoryResult = {
     ]
 }
 
-export const issueResult: IssueResult[] = [
+export const mockIssueResult: IssueResult[] = [
     {
         "url": "https://api.github.com/repos/facebook/react/issues/26004",
         "repository_url": "https://api.github.com/repos/facebook/react",

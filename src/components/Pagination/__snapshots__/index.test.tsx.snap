@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> 정상적으로 렌더링되었는지 확인한다 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px;
+  height: 20px;
+}
+
+.c1 {
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #212529;
+  visibility: hidden;
+}
+
+.c1:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.c1[disabled] {
+  cursor: revert;
+  -webkit-transform: revert;
+  -ms-transform: revert;
+  transform: revert;
+}
+
+.c2 {
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #212529;
+  visibility: visible;
+}
+
+.c2:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.c2[disabled] {
+  cursor: revert;
+  -webkit-transform: revert;
+  -ms-transform: revert;
+  transform: revert;
+}
+
+<div>
+  <nav
+    class="c0"
+  >
+    <button
+      class="c1"
+      disabled=""
+    >
+      이전 페이지
+    </button>
+    <button
+      class="c2"
+    >
+      다음 페이지
+    </button>
+  </nav>
+</div>
+`;

@@ -1,6 +1,8 @@
 import { request } from './client';
 import { RepositoryResult, IssueResult } from 'types/api';
 import qs from 'qs';
+import axios from 'axios';
+import {BASE_URL} from 'api/client';
 
 export type IssueSortType = 'created' | 'updated' | 'comments';
 export type SortDirection = 'asc' | 'desc';
@@ -38,10 +40,14 @@ export const getRepositories = async (
 		if (config) {
 			querystring += '&' + qs.stringify(config);
 		}
-
-		const response = await request.get<RepositoryResult>(
-			`/search/repositories?q=${query}${querystring}`,
+		
+		const response = await axios.get<RepositoryResult>(
+			`${BASE_URL}/search/repositories?q=${query}${querystring}`
 		);
+		// TODO: axios.create의 mock처리 확인 후 복구하기
+		// const response = await request.get<RepositoryResult>(
+		// 	`/search/repositories?q=${query}${querystring}`,
+		// );
 		return response.data;
 	} catch (error) {
 		console.error(error, 'apis - getRepositories Error');
@@ -57,8 +63,11 @@ export const getIssues = async (
 		if (config) {
 			querystring += qs.stringify(config);
 		}
-		const url = `/repos/${repository}/issues?${querystring}`;
-		const response = await request.get<IssueResult[]>(url);
+		const url = `${BASE_URL}/repos/${repository}/issues?${querystring}`;
+		const response = await axios.get<IssueResult[]>(url);
+		// TODO: axios.create의 mock처리 확인 후 복구하기
+		// const url = `/repos/${repository}/issues?${querystring}`;
+		// const response = await request.get<IssueResult[]>(url);
 		return response.data;
 	} catch (error) {
 		console.error(error, 'apis - getIssues Error');
