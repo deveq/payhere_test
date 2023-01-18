@@ -62,7 +62,7 @@ const Issues = () => {
 						</Suspense>
 					) : (
 						<Styled.CardTitle>
-							관심목록을 등록해보세요
+							검색을 통해 관심목록을 등록해주세요~
 					</Styled.CardTitle>
 					)
 				}

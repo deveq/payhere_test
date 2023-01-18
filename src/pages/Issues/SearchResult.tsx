@@ -65,14 +65,9 @@ const SearchResult = ({
 		);
 	}
 
-    if (data && data.length === 0) {
-        <div>끝</div>
-    }
-
 	return (
 		<Styled.ListWrapper>
 			{sortIssues(issueArray, index).map((item) => {
-				//  const "https://api.github.com/repos/facebook/react"
 				if (item) {
 					const repoUrl = item.repository_url.split('/');
 					const repoName = repoUrl.pop();

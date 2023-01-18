@@ -23,7 +23,7 @@ const ChipList = ({ data, onClick, selectedItem }: ChipListProps) => {
 						</Styled.Chip>
 					))
 				) : (
-					<div>관심 목록을 추가해주세요~</div>
+					<Styled.Message>관심 목록을 추가해주세요~</Styled.Message>
 				)
 			}
 		</Styled.ChipList>

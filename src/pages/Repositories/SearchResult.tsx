@@ -40,7 +40,7 @@ const SearchResult = ({ page, setPage, query, index }: SearchResultProps) => {
 			}
 
 			if (prev.length === 4) {
-				alert('4개 초과');
+				alert('관심목록은 최대 4개까지 등록할 수 있습니다.');
 				return prev;
 			} 
 			

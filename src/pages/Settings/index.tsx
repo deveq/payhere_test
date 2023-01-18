@@ -18,7 +18,6 @@ const Settings = () => {
 	const [recordMode, setRecordMode] = useRecoilState(recordModeSelector);
 	const resetRepositories = useResetRecoilState(repositoriesState);
 	const resetRecordHistory = useResetRecoilState(recordHistoryState);
-	// const selectedIndex = useRecoilValue(asideSelectedIndex);
 	const [selectedIndex, setSelectedIndex] = useState(0);
 
 	const setTheme = () => {
@@ -39,7 +38,7 @@ const Settings = () => {
 		}
 	};
 
-	const menuList = ['다크모드', '검색기록', '초기화'];
+	const menuList = ['다크모드', '검색기록', '관심목록'];
 
 	const settingsMenuList = [
 		[
