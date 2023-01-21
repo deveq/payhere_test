@@ -7,8 +7,9 @@ import {useRecoilState} from 'recoil';
 
 describe("<Input />", () => {
     it('정상적으로 렌더링 되는지 확인한다', () => {
+        const fn = jest.fn();
         const {container} = renderWithWrapper(
-            <Input />
+            <Input onClickHistoryItem={fn}/>
         );
         const input = screen.getByRole('textbox');
         const form = input.parentElement;
@@ -20,10 +21,11 @@ describe("<Input />", () => {
     })
 
     it('props에 따라 정상렌더링되는지 확인한다', () => {
-
+        const fn = jest.fn();
         const {container} = renderWithWrapper(
             <Input
                 iconVisible={true}
+                onClickHistoryItem={fn}
              />
         );
         

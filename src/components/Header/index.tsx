@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, FormEvent, useCallback } from 'react';
 import * as Styled from './styles';
 import BlindText from '../BlindText';
 import Input from 'components/Input';
@@ -18,28 +18,40 @@ const Header = () => {
 	const navigate = useNavigate();
 	const setRecordHistory = useSetRecoilState(recordHistoryState);
 
-	const onChangeText = (event: ChangeEvent<HTMLInputElement>) => {
+	const onChangeText = useCallback((event: ChangeEvent<HTMLInputElement>) => {
 		setText(event.target.value);
-	}
-	const onClickHistoryItem = (text: string) => {
+	}, [setText]);
+
+	const onClickHistoryItem = useCallback((text: string) => {
 		navigate({
 			pathname: '/repositories',
 			search: `?query=${text}`,
 		});
-	};
+	}, [navigate]);
 
-	const onSubmit = () => {
+	const onSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
+		// form태그의 onSubmit을 통해 input의 value를 받아오려하였지만
+		// HTMLFormElement에는 search라는 name을 가진 프로퍼티가 없으므로
+		// 캐스팅을 통해 추가해준다
+		const target = event.target as typeof event.target & {
+			search: HTMLInputElement,
+		}
+		const text = target.search.value;
 		if (text) {
 			setRecordHistory(prev => {
 				if (prev.includes(text)) {
+					// 중복체크
 					return prev;
 				}
 				const nextHistory = [...prev];
 
 				if (nextHistory.length === 3) {
-					nextHistory.shift();
+					// history가 3개 일 경우 가장 오래된 history를 pop한다
+					nextHistory.pop();
 				}
-				nextHistory.push(text);
+				
+				// 새롭게 추가되는 history를 unshift로 넣어준다
+				nextHistory.unshift(text);
 				return nextHistory;
 			})
 			navigate({
@@ -47,7 +59,9 @@ const Header = () => {
 				search: `?query=${text}`,
 			});
 		}
-	};
+
+	}, [setRecordHistory, navigate]);
+
 	return (
 		<Styled.Container>
 			<Styled.Headline>
